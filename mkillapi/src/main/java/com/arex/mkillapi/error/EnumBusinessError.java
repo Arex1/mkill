@@ -11,7 +11,9 @@ public enum EnumBusinessError implements CommonError {
     //用户不存在
     USER_NOT_EXIST(10000,"用户不存在"),
     //参数不合法
-    COMMON_ERROR(00001,"参数不合法")
+    COMMON_ERROR(10001,"参数不合法"),
+    //未知错误
+    UNKNOW_ERROR(50000,"未知错误")
     ;
 
     private int errorCode;

@@ -19,7 +19,7 @@ public class CommonReturnResults {
         return CommonReturnResults.create(result,"success");
     }
 
-    private static CommonReturnResults create(Object result, String state) {
+    public static CommonReturnResults create(Object result, String state) {
         CommonReturnResults results = new CommonReturnResults();
         results.setData(result);
         results.setState(state);
