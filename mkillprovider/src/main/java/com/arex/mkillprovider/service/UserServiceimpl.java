@@ -1,6 +1,5 @@
 package com.arex.mkillprovider.service;
 
-import ch.qos.logback.core.joran.util.beans.BeanUtil;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.arex.mkillapi.ModelAndView.MkillUserView;
 import com.arex.mkillapi.UserService;
@@ -19,7 +18,7 @@ import java.util.List;
  * com.arex.mkillprovider.service
  * 2019/9/21
  */
-@Service
+@Service(version = "1.0.0")
 public class UserServiceimpl implements UserService {
 
     @Autowired

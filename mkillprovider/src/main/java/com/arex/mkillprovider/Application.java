@@ -1,5 +1,6 @@
 package com.arex.mkillprovider;
 
+import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 
 import java.util.concurrent.CountDownLatch;
@@ -12,6 +13,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @author meisheng
  */
 @SpringBootApplication
+@EnableDubbo
 @MapperScan("com.arex.mkillprovider.mapper")
 public class Application {
 
