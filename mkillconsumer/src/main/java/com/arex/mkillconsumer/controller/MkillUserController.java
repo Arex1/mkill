@@ -6,8 +6,8 @@ import com.arex.mkillapi.UserService;
 import com.arex.mkillapi.error.BusinessException;
 import com.arex.mkillapi.error.EnumBusinessError;
 import com.arex.mkillapi.returnresult.CommonReturnResults;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ import java.util.List;
  * com.arex.mkillconsumer.controller
  * 2019/9/23
  */
-@Controller
+@RestController
 public class MkillUserController extends BaseController{
 
     @Reference(version = "1.0.0")
