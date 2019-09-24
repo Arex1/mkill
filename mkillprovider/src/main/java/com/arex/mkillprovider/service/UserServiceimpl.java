@@ -26,10 +26,11 @@ public class UserServiceimpl implements UserService {
 
     @Override
     public List<MkillUserView> getUser() {
-        MkillUserView userView = new MkillUserView();
+
         List<MkillUser> mkillUsers = userMapper.selectAll();
         List<MkillUserView> userViews = new ArrayList<>(10);
         for (MkillUser mkillUser: mkillUsers) {
+            MkillUserView userView = new MkillUserView();
             BeanUtils.copyProperties(mkillUser,userView);
             userViews.add(userView);
         }
