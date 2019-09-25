@@ -8,8 +8,10 @@ import com.arex.mkillapi.error.EnumBusinessError;
 import com.arex.mkillapi.returnresult.CommonReturnResults;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -20,8 +22,8 @@ import java.util.List;
  * com.arex.mkillconsumer.controller
  * 2019/9/23
  */
-@RestController
-public class MkillUserController extends BaseController{
+@Controller
+public class MkillUserController extends BaseController {
 
     protected static final Logger logger = LoggerFactory.getLogger(MkillUserController.class);
 
@@ -29,11 +31,17 @@ public class MkillUserController extends BaseController{
     private UserService userService;
 
     @GetMapping("/user")
+    @ResponseBody
     public CommonReturnResults getAllUsers() throws BusinessException {
         List<MkillUserView> user = userService.getUser();
         if (user == null) {
             throw new BusinessException(EnumBusinessError.USER_NOT_EXIST);
         }
-      return CommonReturnResults.create(user);
+        return CommonReturnResults.create(user);
+    }
+
+    @GetMapping("/index")
+    public String getWeb(Model model){
+        return "admin";
     }
 }
