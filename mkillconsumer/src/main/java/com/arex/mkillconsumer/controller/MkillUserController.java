@@ -42,6 +42,6 @@ public class MkillUserController extends BaseController {
 
     @GetMapping("/index")
     public String getWeb(Model model){
-        return "admin";
+        return "index";
     }
 }
