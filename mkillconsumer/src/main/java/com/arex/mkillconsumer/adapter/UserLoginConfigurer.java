@@ -3,7 +3,6 @@ package com.arex.mkillconsumer.adapter;
 import com.arex.mkillconsumer.interceptor.UserLoginInterceptor;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.util.ResourceUtils;
 import org.springframework.web.servlet.config.annotation.*;
 
 import javax.annotation.Resource;
@@ -31,7 +30,7 @@ public class UserLoginConfigurer implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(interceptor).addPathPatterns("/**")
-                .excludePathPatterns("/**", "/login")
+                .excludePathPatterns("/", "/login")
                 .excludePathPatterns("/static/**");
     }
 

@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>登录</title>
-    <link rel="stylesheet" type="text/css" href="../layui/css/main.css">
-    <link rel="stylesheet" type="text/css" href="../layui/css/util.css">
+    <link rel="stylesheet" type="text/css" href="../static/layui/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/layui/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/layui/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../static/layui/css/util.css">
 
 </head>
 <body>
 <div class="limiter">
-    <div class="container-login100" style="background-image: url('/layui/images.login/bg-01.jpg');">
+    <div class="container-login100" style="background-image: url('/static/layui/images.login/bg-01.jpg');">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
             <form class="login100-form validate-form">
                 <span class="login100-form-title p-b-49">登录</span>
@@ -35,7 +37,8 @@
                 <div class="container-login100-form-btn">
                     <div class="wrap-login100-form-btn">
                         <div class="login100-form-bgbtn"></div>
-                        <button class="login100-form-btn">登 录</button></div>
+                        <button class="login100-form-btn" onclick="login()">登 录</button>
+                    </div>
                 </div>
 
                 <div class="txt1 text-center p-t-54 p-b-20">
@@ -43,8 +46,8 @@
                 </div>
 
                 <div class="flex-c-m"><a href="#" class="login100-social-item bg1">
-                        <i class="fa fa-wechat">微信</i>
-                    </a>
+                    <i class="fa fa-wechat">微信</i>
+                </a>
 
                     <a href="#" class="login100-social-item bg2">
                         <i class="fa fa-qq">QQ</i>
@@ -62,6 +65,12 @@
         </div>
     </div>
 </div>
-<script src="js/main.js"></script>
+<script src="/static/layui/jquery-3.2.1.min.js"></script>
+<script src="/static/layui/login.js"></script>
+<script>
+    function login() {
+        alert("你好，我是一个警告框！");
+    }
+</script>
 </body>
 </html>
