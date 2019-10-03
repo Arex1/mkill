@@ -15,5 +15,25 @@ import java.util.List;
  */
 public interface UserService {
 
+    /**
+     * 获取所有用户信息
+     *
+     * @return
+     */
     List<MkillUserView> getUser();
+
+    /**
+     * 根据用户id查询用户家的信息
+     *
+     * @param id
+     * @return
+     */
+    MkillUserView getUserById(int id);
+
+    /**
+     * 用户注册或者则定义新增用户
+     *
+     * @return
+     */
+    boolean addUser(MkillUserView mkillUserView);
 }

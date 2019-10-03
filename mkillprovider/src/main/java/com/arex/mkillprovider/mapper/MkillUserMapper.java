@@ -1,6 +1,8 @@
 package com.arex.mkillprovider.mapper;
 
+import com.arex.mkillapi.ModelAndView.MkillUserView;
 import com.arex.mkillapi.model.MkillUser;
+import org.apache.ibatis.annotations.Param;
 import tk.mybatis.mapper.common.Mapper;
 
 /**
@@ -11,4 +13,12 @@ import tk.mybatis.mapper.common.Mapper;
  * 2019/9/21
  */
 public interface MkillUserMapper extends Mapper<MkillUser> {
+    /**
+     * 根据id获取对应用户的信息
+     *
+     * @param id
+     * @return
+     */
+    MkillUserView getUserById(@Param("id") int id);
+
 }

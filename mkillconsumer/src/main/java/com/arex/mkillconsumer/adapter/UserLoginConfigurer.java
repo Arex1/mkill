@@ -30,7 +30,7 @@ public class UserLoginConfigurer implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(interceptor).addPathPatterns("/**")
-                .excludePathPatterns("/", "/login")
+                .excludePathPatterns("/", "/login","/register")
                 .excludePathPatterns("/static/**");
     }
 

@@ -29,11 +29,27 @@ public class UserServiceimpl implements UserService {
 
         List<MkillUser> mkillUsers = userMapper.selectAll();
         List<MkillUserView> userViews = new ArrayList<>(10);
-        for (MkillUser mkillUser: mkillUsers) {
+        for (MkillUser mkillUser : mkillUsers) {
             MkillUserView userView = new MkillUserView();
-            BeanUtils.copyProperties(mkillUser,userView);
+            BeanUtils.copyProperties(mkillUser, userView);
             userViews.add(userView);
         }
         return userViews;
     }
+
+    @Override
+    public MkillUserView getUserById(int id) {
+        return userMapper.getUserById(id);
+    }
+
+    @Override
+    public boolean addUser(MkillUserView mkillUserView) {
+
+        MkillUser user = new MkillUser();
+        BeanUtils.copyProperties(mkillUserView,user);
+        int insert = userMapper.insert(user);
+
+        return insert>0;
+    }
+
 }
