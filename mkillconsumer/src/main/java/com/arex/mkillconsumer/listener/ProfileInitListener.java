@@ -4,6 +4,13 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
+/**
+ * Arex
+ *
+ * @author weiwei-gu
+ * com.arex.mkillconsumer.listener
+ * 2019/9/23
+ */
 public class ProfileInitListener implements ServletContextListener {
 	
 	private static final String PROFILE_KEY="spring.profiles.active";

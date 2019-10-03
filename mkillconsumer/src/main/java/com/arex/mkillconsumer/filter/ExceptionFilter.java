@@ -26,8 +26,11 @@ import com.alibaba.dubbo.rpc.service.GenericService;
 import java.lang.reflect.Method;
 
 /**
- * @author lichuan
+ * Arex
  *
+ * @author weiwei-gu
+ * com.arex.mkillconsumer.filter
+ * 2019/9/23
  */
 @Activate(group = Constants.PROVIDER)
 public class ExceptionFilter implements Filter {
