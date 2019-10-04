@@ -36,7 +36,7 @@
                 <div class="container-login100-form-btn">
                     <div class="wrap-login100-form-btn">
                         <div class="login100-form-bgbtn"></div>
-                        <button class="login100-form-btn" onclick="login()">登 录</button>
+                        <button type="submit" class="login100-form-btn" onclick="login()">登 录</button>
                     </div>
                 </div>
 
@@ -68,7 +68,31 @@
 <script src="/static/layui/login.js"></script>
 <script>
     function login() {
-        alert("你好，我是一个警告框！");
+        // var username = $("#username").val();
+        // var password = $("#password").val();
+        // if (username == "" || password == "") {
+        //     layer.msg('用户名或密码不能为空', {icon: 2});
+        //     return;
+        // }
+        $.ajax({
+            type: "POST",
+            url: "/in",
+            data: {
+                // "username": username,
+                // "password": password
+            },
+            success: function (e) {
+                // layer.msg(e.msg, {icon: 1});
+                // setTimeout(function () {
+                //     location.href = "in";
+                // }, 1500);
+                window.location.href = '/user';
+            },
+            error: function (e) {
+                console.log(e.responseText);
+                layer.msg(JSON.parse(e.responseText).msg, {icon: 2});
+            }
+        });
     }
 </script>
 </body>

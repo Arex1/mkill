@@ -63,6 +63,6 @@ public class MkillUserController extends BaseController {
         HttpSession session = httpServletRequest.getSession(true);
         session.setAttribute("6666",6666);
 
-        return "admin";
+        return "register";
     }
 }
