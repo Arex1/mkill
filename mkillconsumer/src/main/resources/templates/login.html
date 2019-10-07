@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>登录</title>
-    <link rel="stylesheet" type="text/css" href="../static/layui/css/main.css">
-    <link rel="stylesheet" type="text/css" href="../static/layui/css/util.css">
-    <link rel="stylesheet" type="text/css" href="../static/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" th:href="@{../static/layui/css/main.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../static/layui/css/util.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../static/layui/css/layui.css}">
 
 </head>
 <body>
@@ -64,8 +64,8 @@
         </div>
     </div>
 </div>
-<script src="/static/layui/jquery-3.2.1.min.js"></script>
-<script src="/static/layui/login.js"></script>
+<script th:src="@{../static/layui/jquery-3.2.1.min.js}"></script>
+<script th:src="@{../static/layui/login.js}"></script>
 <script>
     function login() {
         // var username = $("#username").val();

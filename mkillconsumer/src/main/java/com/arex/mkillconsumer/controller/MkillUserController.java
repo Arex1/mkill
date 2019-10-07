@@ -52,17 +52,4 @@ public class MkillUserController extends BaseController {
         return "admin";
     }
 
-    @GetMapping("/login")
-    public String getLogin(){
-        return "login";
-    }
-
-    @PostMapping("/in")
-    public String getIn(HttpServletRequest httpServletRequest){
-
-        HttpSession session = httpServletRequest.getSession(true);
-        session.setAttribute("6666",6666);
-
-        return "register";
-    }
 }
