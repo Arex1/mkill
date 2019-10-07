@@ -34,6 +34,12 @@ public class MkillUserController extends BaseController {
     @Reference(version = "1.0.0")
     private UserService userService;
 
+    /**
+     * 获取所有用户列表数据
+     *
+     * @return
+     * @throws BusinessException
+     */
     @GetMapping("/user")
     @ResponseBody
     public CommonReturnResults getAllUsers() throws BusinessException {
@@ -44,11 +50,16 @@ public class MkillUserController extends BaseController {
         return CommonReturnResults.create(user);
     }
 
+    /**
+     * 暂时试用测试
+     * @param model
+     * @return
+     */
     @GetMapping("/admin")
-    public String getWeb(ModelMap model){
+    public String getWeb(ModelMap model) {
         List<MkillUserView> user = userService.getUser();
         CommonReturnResults commonReturnResults = CommonReturnResults.create(user);
-        model.addAttribute("users",commonReturnResults);
+        model.addAttribute("users", commonReturnResults);
         return "admin";
     }
 

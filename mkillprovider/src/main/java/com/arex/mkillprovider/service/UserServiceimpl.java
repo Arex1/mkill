@@ -52,4 +52,9 @@ public class UserServiceimpl implements UserService {
         return insert>0;
     }
 
+    @Override
+    public MkillUserView getLoginUser(String userName, String password) {
+        return null;
+    }
+
 }

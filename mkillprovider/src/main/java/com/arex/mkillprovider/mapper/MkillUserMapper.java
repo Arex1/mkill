@@ -21,4 +21,12 @@ public interface MkillUserMapper extends Mapper<MkillUser> {
      */
     MkillUserView getUserById(@Param("id") int id);
 
+    /**
+     *
+     * @param userName
+     * @param password
+     * @return
+     */
+    boolean getUserByNameWord(String userName, String password);
+
 }

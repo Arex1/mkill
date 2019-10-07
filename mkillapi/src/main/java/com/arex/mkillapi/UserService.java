@@ -36,4 +36,11 @@ public interface UserService {
      * @return
      */
     boolean addUser(MkillUserView mkillUserView);
+
+    /**
+     * 获取登录者的信息，用于判断登陆者
+     *
+     * @return
+     */
+    MkillUserView getLoginUser(String userName, String password);
 }
