@@ -3,6 +3,8 @@ package com.arex.mkillconsumer.controller;
 import com.arex.mkillapi.error.BusinessException;
 import com.arex.mkillapi.error.EnumBusinessError;
 import com.arex.mkillapi.returnresult.CommonReturnResults;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -21,6 +23,7 @@ import java.util.Map;
  */
 public class BaseController {
 
+    protected static final Logger logger = LoggerFactory.getLogger(BaseController.class);
     /**
      * 处理未被Controller吸收的Exception
      * @param e
@@ -31,6 +34,8 @@ public class BaseController {
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public Object handlerException(Exception e, HttpServletRequest request) {
+
+        logger.info("找到一个异常BaseController-handlerException");
         Map<String, Object> responseData = new HashMap<>(10);
         if (e instanceof BusinessException) {
             BusinessException businessException = (BusinessException) e;

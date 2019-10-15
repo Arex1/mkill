@@ -32,6 +32,7 @@ public class LoginController extends BaseController {
 
     @Reference(version = "1.0.0")
     private UserService userService;
+
     /**
      * 进入登录界面
      *
@@ -39,23 +40,19 @@ public class LoginController extends BaseController {
      */
     @GetMapping("/login")
     public String getLogin() {
-        logger.info("进入登录界面。。。。");
         return "login";
     }
 
     /**
-     * @param httpServletRequest
+     * 对登录用户进行校验
+     *
+     * @param username
+     * @param password
+     * @param request
+     * @param response
      * @return
+     * @throws BusinessException
      */
-    @PostMapping("/in")
-    public String getIn(HttpServletRequest httpServletRequest) {
-
-        HttpSession session = httpServletRequest.getSession(true);
-        session.setAttribute("6666", 6666);
-
-        return "admin";
-    }
-
     @ResponseBody
     @PostMapping("/checkLogin")
     public CommonReturnResults checkLogin(@RequestParam String username,
@@ -64,12 +61,21 @@ public class LoginController extends BaseController {
                                           HttpServletResponse response)
             throws BusinessException {
         MkillUserView user = userService.getLoginUser(username, password);
+        logger.info("checkLogin");
         if (user == null) {
+            logger.info("error");
+            request.getSession().setAttribute("6666",6666);
             throw new BusinessException(EnumBusinessError.USER_NOT_EXIST);
         } else {
             request.getSession().setAttribute("userinfo", user);
             return CommonReturnResults.create("成功");
         }
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpServletRequest request){
+        request.getSession().removeAttribute("6666");
+        return "redirect:/";
     }
 
 }

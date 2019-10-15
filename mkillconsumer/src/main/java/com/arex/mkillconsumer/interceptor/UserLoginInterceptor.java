@@ -32,14 +32,14 @@ public class UserLoginInterceptor implements HandlerInterceptor {
         //得到session
         HttpSession session = httpServletRequest.getSession(true);
 
-        session.setAttribute("6666",6666);
+//        session.setAttribute("6666",6666);
         //得到对象
         Object admin = session.getAttribute("6666");
 
         //判断对象是否存在
         if (StringUtils.isEmpty(admin)) {
             //不存在则跳转到登录页
-            logger.info("进入登录页面");
+            logger.info("拦截器---进入登录页面");
             httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/login");
             return false;
         } else {
