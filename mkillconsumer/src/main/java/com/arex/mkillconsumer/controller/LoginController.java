@@ -44,6 +44,16 @@ public class LoginController extends BaseController {
     }
 
     /**
+     * 进入主界面
+     *
+     * @return
+     */
+    @GetMapping("/admin")
+    public String goAdmin() {
+        return "admin";
+    }
+
+    /**
      * 对登录用户进行校验
      *
      * @param username
@@ -61,10 +71,10 @@ public class LoginController extends BaseController {
                                           HttpServletResponse response)
             throws BusinessException {
         MkillUserView user = userService.getLoginUser(username, password);
-        logger.info("checkLogin");
+        //这里进行简单校验，并没有进行其他判断
         if (user == null) {
-            logger.info("error");
-            request.getSession().setAttribute("6666",6666);
+            logger.info("error-----方法CommonReturnResults---user");
+            request.getSession().setAttribute("userinfo", 6666);
             throw new BusinessException(EnumBusinessError.USER_NOT_EXIST);
         } else {
             request.getSession().setAttribute("userinfo", user);
@@ -72,8 +82,14 @@ public class LoginController extends BaseController {
         }
     }
 
+    /**
+     * 登出
+     *
+     * @param request
+     * @return
+     */
     @GetMapping("/logout")
-    public String logout(HttpServletRequest request){
+    public String logout(HttpServletRequest request) {
         request.getSession().removeAttribute("6666");
         return "redirect:/";
     }

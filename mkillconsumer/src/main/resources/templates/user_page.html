@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+     内容主体区域
+    <table class="layui-table">
+    <colgroup>
+    <col width="150">
+    <col width="200">
+    <col>
+    </colgroup>
+    <thead>
+    <tr>
+    <th>昵称</th>
+    <th>加入时间</th>
+    </tr>
+    </thead>
+    <tbody th:remove="all-but-first">
+    <tr th:each="user : ${users.data}">
+    <td th:text="${user.name}" style="white-space: normal">Onions</td>
+    　　
+    <td th:text="${user.id}">2.41</td>
+    </tr>
+    </tbody>
+    </table> 内容主体区域
+    <table class="layui-table">
+    <colgroup>
+    <col width="150">
+    <col width="200">
+    <col>
+    </colgroup>
+    <thead>
+    <tr>
+    <th>昵称</th>
+    <th>加入时间</th>
+    </tr>
+    </thead>
+    <tbody th:remove="all-but-first">
+    <tr th:each="user : ${users.data}">
+    <td th:text="${user.name}" style="white-space: normal">Onions</td>
+    　　
+    <td th:text="${user.id}">2.41</td>
+    </tr>
+    </tbody>
+    </table>
+</div>
+</body>
+</html>

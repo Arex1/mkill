@@ -55,12 +55,12 @@ public class MkillUserController extends BaseController {
      * @param model
      * @return
      */
-    @GetMapping("/admin")
+    @GetMapping("/users")
     public String getWeb(ModelMap model) {
         List<MkillUserView> user = userService.getUser();
         CommonReturnResults commonReturnResults = CommonReturnResults.create(user);
         model.addAttribute("users", commonReturnResults);
-        return "admin";
+        return "user_page";
     }
 
 }
