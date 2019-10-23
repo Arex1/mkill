@@ -12,11 +12,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -43,6 +40,7 @@ public class MkillUserController extends BaseController {
     @GetMapping("/user")
     @ResponseBody
     public CommonReturnResults getAllUsers() throws BusinessException {
+        logger.info("getAllUsers");
         List<MkillUserView> user = userService.getUser();
         if (CollectionUtils.isEmpty(user)) {
             throw new BusinessException(EnumBusinessError.USER_NOT_EXIST);
@@ -56,7 +54,8 @@ public class MkillUserController extends BaseController {
      * @return
      */
     @GetMapping("/users")
-    public String getWeb(ModelMap model) {
+    public String getWeb(ModelMap model)  {
+        logger.info("getWeb---getAllUsers");
         List<MkillUserView> user = userService.getUser();
         CommonReturnResults commonReturnResults = CommonReturnResults.create(user);
         model.addAttribute("users", commonReturnResults);

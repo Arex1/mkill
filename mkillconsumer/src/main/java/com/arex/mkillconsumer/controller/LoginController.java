@@ -90,8 +90,8 @@ public class LoginController extends BaseController {
      */
     @GetMapping("/logout")
     public String logout(HttpServletRequest request) {
-        request.getSession().removeAttribute("6666");
-        return "redirect:/";
+        request.getSession().removeAttribute("userinfo");
+        return "redirect:/login";
     }
 
 }
