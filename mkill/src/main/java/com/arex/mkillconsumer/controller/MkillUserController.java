@@ -2,8 +2,8 @@ package com.arex.mkillconsumer.controller;
 
 import com.alibaba.dubbo.common.utils.CollectionUtils;
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.arex.mkillapi.ModelAndView.MkillUserView;
-import com.arex.mkillapi.UserService;
+import com.arex.mkillapi.modelview.MkillUserView;
+import com.arex.mkillapi.service.UserService;
 import com.arex.mkillapi.error.BusinessException;
 import com.arex.mkillapi.error.EnumBusinessError;
 import com.arex.mkillapi.returnresult.CommonReturnResults;

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.arex.mkillprovider.mapper.MkillUserMapper">
     <!--auto generated Code-->
-    <resultMap id="BaseResultMap" type="com.arex.mkillapi.ModelAndView.MkillUserView">
+    <resultMap id="BaseResultMap" type="com.arex.mkillapi.modelview.MkillUserView">
         <result column="id" property="id" jdbcType="INTEGER"/>
         <result column="age" property="age" jdbcType="INTEGER"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
@@ -18,23 +18,5 @@
         created_at,
         updated_at
     </sql>
-
-    <!-- 根据id查询对应的用户 -->
-    <select id="getUserById" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from m_kill_user
-        where id<![CDATA[=]]> #{id,jdbcType=INTEGER}
-    </select>
-    <select id="getUserByNameWord" resultType="java.lang.Boolean">
-    <![CDATA[
-
-         select count(1) from mkill_user u,`password` p
-         where u.name=#{userName}
-         and p.password = #{password}
-         and p.user_id =  u.id
-
-        ]]>
-    </select>
 </mapper>
 

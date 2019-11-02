@@ -1,6 +1,6 @@
 package com.arex.mkillprovider.mapper;
 
-import com.arex.mkillapi.model.MkillUser;
+import com.arex.mkillapi.model.users.MkillUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

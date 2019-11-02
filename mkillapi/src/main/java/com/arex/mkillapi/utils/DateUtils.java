@@ -2,6 +2,8 @@ package com.arex.mkillapi.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Locale;
 
@@ -43,4 +45,25 @@ public class DateUtils {
         return simformat.format(date);
     }
 
+    /**
+     *
+     * @param localDate
+     * @param dateFormatType
+     * @return
+     */
+    public static String getLocalDateFormat(LocalDate localDate, String dateFormatType) {
+        SimpleDateFormat simformat = new SimpleDateFormat(dateFormatType);
+        return simformat.format(localDate);
+    }
+
+    /**
+     *
+     * @param localDateTime
+     * @param dateFormatType
+     * @return
+     */
+    public static String getLocalDateFormat(LocalDateTime localDateTime, String dateFormatType) {
+        SimpleDateFormat simformat = new SimpleDateFormat(dateFormatType);
+        return simformat.format(localDateTime);
+    }
 }

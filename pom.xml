@@ -22,6 +22,6 @@
     <modules>
         <module>mkillapi</module>
         <module>mkillprovider</module>
-        <module>mkillconsumer</module>
+        <module>mkill</module>
     </modules>
 </project>

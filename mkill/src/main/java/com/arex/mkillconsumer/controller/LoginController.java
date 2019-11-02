@@ -1,8 +1,7 @@
 package com.arex.mkillconsumer.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.arex.mkillapi.ModelAndView.MkillUserView;
-import com.arex.mkillapi.UserService;
+import com.arex.mkillapi.service.UserService;
 import com.arex.mkillapi.error.BusinessException;
 import com.arex.mkillapi.error.EnumBusinessError;
 import com.arex.mkillapi.returnresult.CommonReturnResults;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * Arex
