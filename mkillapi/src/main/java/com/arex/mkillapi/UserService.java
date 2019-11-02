@@ -13,7 +13,7 @@ import java.util.List;
  * com.arex.mkillapi
  * 2019/9/21
  */
-public interface UserService {
+public interface UserService{
 
     /**
      * 获取所有用户信息
@@ -38,9 +38,11 @@ public interface UserService {
     boolean addUser(MkillUserView mkillUserView);
 
     /**
-     * 获取登录者的信息，用于判断登陆者
+     * 判断用户是否存在
      *
+     * @param userName
+     * @param password
      * @return
      */
-    MkillUserView getLoginUser(String userName, String password);
+    boolean getLoginUser(String userName, String password);
 }

@@ -26,5 +26,15 @@
         from m_kill_user
         where id<![CDATA[=]]> #{id,jdbcType=INTEGER}
     </select>
+    <select id="getUserByNameWord" resultType="java.lang.Boolean">
+    <![CDATA[
+
+         select count(1) from mkill_user u,`password` p
+         where u.name=#{userName}
+         and p.password = #{password}
+         and p.user_id =  u.id
+
+        ]]>
+    </select>
 </mapper>
 
