@@ -1,9 +1,10 @@
-package com.arex.mkillapi.modelview;
+package com.arex.mkillapi.model.users;
 
+import com.arex.mkillapi.model.BaseModel;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * Arex
@@ -13,14 +14,9 @@ import java.time.LocalDateTime;
  * 2019/9/21
  */
 @Data
-public class MkillUserView implements Serializable {
+public class MkUser extends BaseModel {
 
-    private static final long serialVersionUID = -8187732301310703472L;
-
-    /**
-     * 用户Id
-     */
-    private Long id;
+    private static final long serialVersionUID = 3488541519303777142L;
 
     /**
      * 头像
@@ -28,9 +24,23 @@ public class MkillUserView implements Serializable {
     private String icon;
 
     /**
-     * 用户名字
+     * 用户账号
      */
     private String name;
+
+    /**
+     * 用户名字
+     */
+    private String userName;
+
+    /**
+     * 密码
+     */
+    private String password;
+    /**
+     * 加密密码的盐
+     */
+    private String salt;
 
     /**
      * 用户性别
@@ -83,7 +93,16 @@ public class MkillUserView implements Serializable {
     private LocalDateTime loginTime;
 
     /**
-     * "帐号启用状态：0->禁用；1->启用"
+     * 用户状态,
+     * 0:创建未认证（比如没有激活，没有输入验证码等等）--等待验证的用户 ,
+     * 1:正常状态,
+     * 2：用户被锁定.
      */
-    private Integer status;
+    private byte state;
+
+    /**
+     * 一个用户具有多个角色
+     */
+    private List<MkRole> roleList;
+
 }

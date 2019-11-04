@@ -1,8 +1,8 @@
-package com.arex.mkillapi.model.users;
+package com.arex.mkillapi.dto;
 
-import com.arex.mkillapi.model.BaseModel;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -13,9 +13,9 @@ import java.time.LocalDateTime;
  * 2019/9/21
  */
 @Data
-public class MkillUser extends BaseModel {
+public class MkillUserView implements Serializable {
 
-    private static final long serialVersionUID = 3488541519303777142L;
+    private static final long serialVersionUID = -8187732301310703472L;
 
     /**
      * 用户Id
