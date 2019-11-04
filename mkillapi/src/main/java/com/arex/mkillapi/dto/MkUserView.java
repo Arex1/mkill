@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
  * 2019/9/21
  */
 @Data
-public class MkillUserView implements Serializable {
+public class MkUserView implements Serializable {
 
     private static final long serialVersionUID = -8187732301310703472L;
 

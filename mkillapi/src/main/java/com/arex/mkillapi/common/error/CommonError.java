@@ -1,10 +1,10 @@
-package com.arex.mkillapi.error;
+package com.arex.mkillapi.common.error;
 
 /**
  * Arex
  *
  * @author weiwei-gu
- * com.arex.mkillapi.error
+ * com.arex.mkillapi.common.error
  * 2019/9/22
  */
 public interface CommonError {

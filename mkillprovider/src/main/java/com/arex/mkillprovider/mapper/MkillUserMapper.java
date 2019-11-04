@@ -1,6 +1,6 @@
 package com.arex.mkillprovider.mapper;
 
-import com.arex.mkillapi.model.users.MkillUser;
+import com.arex.mkillprovider.model.users.MkUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -10,5 +10,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * com.arex.mkillprovider.mapper
  * 2019/9/21
  */
-public interface MkillUserMapper extends BaseMapper<MkillUser> {
+public interface MkillUserMapper extends BaseMapper<MkUser> {
 }

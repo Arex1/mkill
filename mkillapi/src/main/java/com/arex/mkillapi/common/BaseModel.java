@@ -1,4 +1,4 @@
-package com.arex.mkillprovider.model;
+package com.arex.mkillapi.common;
 
 import java.io.Serializable;
 import java.util.Collection;

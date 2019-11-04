@@ -1,4 +1,4 @@
-package com.arex.mkillapi.returnresult;
+package com.arex.mkillapi.common.returnresult;
 
 import lombok.Data;
 
@@ -6,7 +6,7 @@ import lombok.Data;
  * Arex
  *
  * @author weiwei-gu
- * com.arex.mkillapi.returnresult
+ * com.arex.mkillapi.common.returnresult
  * 2019/9/21
  */
 @Data

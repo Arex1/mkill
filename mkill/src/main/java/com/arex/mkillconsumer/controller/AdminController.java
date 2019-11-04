@@ -1,5 +1,7 @@
 package com.arex.mkillconsumer.controller;
 
+import org.springframework.web.bind.annotation.RestController;
+
 /**
  * Arex
  *
@@ -7,5 +9,6 @@ package com.arex.mkillconsumer.controller;
  * com.arex.mkillconsumer.controller
  * 2019/11/3
  */
-public class AdminController {
+@RestController
+public class AdminController extends BaseController{
 }

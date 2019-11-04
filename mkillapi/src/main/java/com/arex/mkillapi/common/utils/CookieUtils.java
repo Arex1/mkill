@@ -1,4 +1,4 @@
-package com.arex.mkillapi.utils;
+package com.arex.mkillapi.common.utils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
  * Cookie工具类
  *
  * @author weiwei-gu
- * com.arex.mkillapi.utils
+ * com.arex.mkillapi.common.utils
  * 2019/10/23
  */
 public class CookieUtils {

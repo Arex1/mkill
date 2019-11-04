@@ -1,6 +1,7 @@
-package com.arex.mkillapi.model.users;
+package com.arex.mkillprovider.model.users;
 
-import com.arex.mkillapi.model.BaseModel;
+import com.arex.mkillapi.common.BaseModel;
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -103,6 +104,7 @@ public class MkUser extends BaseModel {
     /**
      * 一个用户具有多个角色
      */
+    @TableField(exist = false)
     private List<MkRole> roleList;
 
 }

@@ -2,11 +2,11 @@ package com.arex.mkillconsumer.controller;
 
 import com.alibaba.dubbo.common.utils.CollectionUtils;
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.arex.mkillapi.modelview.MkillUserView;
+import com.arex.mkillapi.dto.MkUserView;
 import com.arex.mkillapi.service.UserService;
-import com.arex.mkillapi.error.BusinessException;
-import com.arex.mkillapi.error.EnumBusinessError;
-import com.arex.mkillapi.returnresult.CommonReturnResults;
+import com.arex.mkillapi.common.error.BusinessException;
+import com.arex.mkillapi.common.error.EnumBusinessError;
+import com.arex.mkillapi.common.returnresult.CommonReturnResults;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -41,7 +41,7 @@ public class MkillUserController extends BaseController {
     @ResponseBody
     public CommonReturnResults getAllUsers() throws BusinessException {
         logger.info("getAllUsers");
-        List<MkillUserView> user = userService.getUser();
+        List<MkUserView> user = userService.getUser();
         if (CollectionUtils.isEmpty(user)) {
             throw new BusinessException(EnumBusinessError.USER_NOT_EXIST);
         }
@@ -56,7 +56,7 @@ public class MkillUserController extends BaseController {
     @GetMapping("/users")
     public String getWeb(ModelMap model)  {
         logger.info("getWeb---getAllUsers");
-        List<MkillUserView> user = userService.getUser();
+        List<MkUserView> user = userService.getUser();
         CommonReturnResults commonReturnResults = CommonReturnResults.create(user);
         model.addAttribute("users", commonReturnResults);
         return "user_page";

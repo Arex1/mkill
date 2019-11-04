@@ -1,8 +1,7 @@
 package com.arex.mkillapi.service;
 
 
-import com.arex.mkillapi.modelview.MkillUserView;
-import com.arex.mkillapi.model.users.*;
+import com.arex.mkillapi.dto.*;
 
 import java.util.List;
 
@@ -21,7 +20,7 @@ public interface UserService {
      *
      * @return
      */
-    List<MkillUserView> getUser();
+    List<MkUserView> getUser();
 
     /**
      * 根据用户id查询用户家的信息
@@ -29,14 +28,14 @@ public interface UserService {
      * @param id
      * @return
      */
-    MkillUserView getUserById(int id);
+    MkUserView getUserById(int id);
 
     /**
      * 用户注册或者则定义新增用户
      *
      * @return
      */
-    boolean addUser(MkillUserView mkillUserView);
+    boolean addUser(MkUserView mkUserView);
 
     /**
      * 判断用户是否存在
@@ -50,12 +49,12 @@ public interface UserService {
     /**
      * 根据用户名获取后台管理员
      */
-    MkillUser getAdminByUsername(String username);
+    MkUserView getAdminByUsername(String username);
 
     /**
      * 注册功能
      */
-    MkillUser register(LoginParam loginParam);
+    MkUserView register(LoginParam loginParam);
 
     /**
      * 登录功能
@@ -76,17 +75,17 @@ public interface UserService {
     /**
      * 根据用户id获取用户
      */
-    MkillUser getItem(Long id);
+    MkUserView getItem(Long id);
 
     /**
      * 根据用户名或昵称分页查询用户
      */
-    List<MkillUser> list(String name, Integer pageSize, Integer pageNum);
+    List<MkUserView> list(String name, Integer pageSize, Integer pageNum);
 
     /**
      * 修改指定用户信息
      */
-    int update(Long id, MkillUser user);
+    int update(Long id, MkUserView user);
 
     /**
      * 删除指定用户
@@ -101,7 +100,7 @@ public interface UserService {
     /**
      * 获取用户对于角色
      */
-    List<Role> getRoleList(Long adminId);
+    List<MkRole> getRoleList(Long adminId);
 
     /**
      * 修改用户的+-权限
@@ -111,7 +110,7 @@ public interface UserService {
     /**
      * 获取用户所有权限（包括角色权限和+-权限）
      */
-    List<Permission> getPermissionList(Long adminId);
+    List<MkPermission> getPermissionList(Long adminId);
 
     /**
      * 修改密码

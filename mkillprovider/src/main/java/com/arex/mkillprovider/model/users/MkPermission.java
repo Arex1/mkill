@@ -1,6 +1,6 @@
-package com.arex.mkillapi.model.users;
+package com.arex.mkillprovider.model.users;
 
-import com.arex.mkillapi.model.BaseModel;
+import com.arex.mkillapi.common.BaseModel;
 
 import java.util.List;
 

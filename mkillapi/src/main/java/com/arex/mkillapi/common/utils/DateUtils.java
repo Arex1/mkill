@@ -1,4 +1,4 @@
-package com.arex.mkillapi.utils;
+package com.arex.mkillapi.common.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,7 +12,7 @@ import java.util.Locale;
  * Arex
  *
  * @author weiwei-gu
- * com.arex.mkillapi.utils
+ * com.arex.mkillapi.common.utils
  * 2019/10/16
  */
 public class DateUtils {

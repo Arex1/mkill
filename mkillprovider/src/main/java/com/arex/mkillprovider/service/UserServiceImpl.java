@@ -1,10 +1,10 @@
 package com.arex.mkillprovider.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.arex.mkillapi.modelview.MkillUserView;
+import com.arex.mkillapi.dto.*;
 import com.arex.mkillapi.service.UserService;
-import com.arex.mkillapi.model.users.*;
 import com.arex.mkillprovider.mapper.MkillUserMapper;
+import com.arex.mkillprovider.model.users.MkUser;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -25,28 +25,28 @@ public class UserServiceImpl implements UserService {
     private MkillUserMapper userMapper;
 
     @Override
-    public List<MkillUserView> getUser() {
+    public List<MkUserView> getUser() {
 
-        List<MkillUser> mkillUsers = userMapper.selectList(null);
-        List<MkillUserView> userViews = new ArrayList<>(10);
-        for (MkillUser mkillUser : mkillUsers) {
-            MkillUserView userView = new MkillUserView();
-            BeanUtils.copyProperties(mkillUser, userView);
+        List<MkUser> mkUsers = userMapper.selectList(null);
+        List<MkUserView> userViews = new ArrayList<>(10);
+        for (MkUser mkUser : mkUsers) {
+            MkUserView userView = new MkUserView();
+            BeanUtils.copyProperties(mkUser, userView);
             userViews.add(userView);
         }
         return userViews;
     }
 
     @Override
-    public MkillUserView getUserById(int id) {
+    public MkUserView getUserById(int id) {
         return null;
     }
 
     @Override
-    public boolean addUser(MkillUserView mkillUserView) {
+    public boolean addUser(MkUserView mkUserView) {
 
-        MkillUser user = new MkillUser();
-        BeanUtils.copyProperties(mkillUserView,user);
+        MkUser user = new MkUser();
+        BeanUtils.copyProperties(mkUserView,user);
         int insert = userMapper.insert(user);
 
         return insert>0;
@@ -54,16 +54,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean getLoginUser(String userName, String password) {
-        return true;
+        return false;
     }
 
     @Override
-    public MkillUser getAdminByUsername(String username) {
+    public MkUserView getAdminByUsername(String username) {
         return null;
     }
 
     @Override
-    public MkillUser register(LoginParam loginParam) {
+    public MkUserView register(LoginParam loginParam) {
         return null;
     }
 
@@ -78,17 +78,17 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public MkillUser getItem(Long id) {
+    public MkUserView getItem(Long id) {
         return null;
     }
 
     @Override
-    public List<MkillUser> list(String name, Integer pageSize, Integer pageNum) {
+    public List<MkUserView> list(String name, Integer pageSize, Integer pageNum) {
         return null;
     }
 
     @Override
-    public int update(Long id, MkillUser user) {
+    public int update(Long id, MkUserView user) {
         return 0;
     }
 
@@ -103,7 +103,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<Role> getRoleList(Long adminId) {
+    public List<MkRole> getRoleList(Long adminId) {
         return null;
     }
 
@@ -113,7 +113,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<Permission> getPermissionList(Long adminId) {
+    public List<MkPermission> getPermissionList(Long adminId) {
         return null;
     }
 
@@ -121,5 +121,6 @@ public class UserServiceImpl implements UserService {
     public int updatePassword(UpdateUserPasswordParam updatePasswordParam) {
         return 0;
     }
+
 
 }

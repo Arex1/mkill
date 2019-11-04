@@ -1,4 +1,4 @@
-package com.arex.mkillapi.utils;
+package com.arex.mkillapi.common.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;

@@ -1,4 +1,4 @@
-package com.arex.mkillapi.model.product;
+package com.arex.mkillprovider.model.product;
 
 /**
  * Arex

@@ -1,8 +1,8 @@
 package com.arex.mkillconsumer.controller;
 
-import com.arex.mkillapi.error.BusinessException;
-import com.arex.mkillapi.error.EnumBusinessError;
-import com.arex.mkillapi.returnresult.CommonReturnResults;
+import com.arex.mkillapi.common.error.BusinessException;
+import com.arex.mkillapi.common.error.EnumBusinessError;
+import com.arex.mkillapi.common.returnresult.CommonReturnResults;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
